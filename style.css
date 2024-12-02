@@ -1,0 +1,25 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Homepage styles */
+#homepage {
+  background-color: #008000;
+  color: #fff;
+}
+
+/* Charities List page styles */
+#charities-list {
+  background-color: #ADD8E6; /* Light blue */
+  color: #000; /* Black text */
+}
+
+/* Charity Profile page styles */
+#charity-profile {
+  background-color: #ADD8E6; /* Light blue */
+  color: #000; /* Black text */
+}
