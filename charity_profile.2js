@@ -1,28 +1,33 @@
-<script src=""charity_profile.js"></script>
-  volunteerButton.addEventListener('click', () => {
-    // Code to display the form here
+// 1. Select the volunteer button after the DOM is loaded
+const volunteerButton = document.getElementById('volunteer-button');
+
+// 2. Add event listener to the button when the DOM is ready
+volunteerButton.addEventListener('click', () => {
+  // Code to display the form
+  const form = document.createElement('form');
+  const nameInput = document.createElement('input');
+  const emailInput = document.createElement('input');
+  const submitButton = document.createElement('button');
+
+  // ... (set attributes for form elements)
+
+  form.appendChild(nameInput);
+  form.appendChild(emailInput);
+  form.appendChild(submitButton);
+
+  document.body.appendChild(form);
 });
-const form = document.createElement('form');
-const nameInput = document.createElement('input');
-const emailInput = document.createElement('input');
-const submitButton = document.createElement('button');
 
-// ... (set attributes for form elements)
-
-form.appendChild(nameInput);
-form.appendChild(emailInput);
-form.appendChild(submitButton);
-
-document.body.appendChild(form);
-const volunteerForm = document.getElementById('volunteer-form');
-volunteerForm.style.display = 'block';
+// 3. Functionality for hover effect (assuming elements exist)
 const charityImage = document.querySelector('.charity-image');
 const charityDetails = document.querySelector('.charity-details');
 
-charityImage.addEventListener('mouseover', () => {
+if (charityImage && charityDetails) { // Check if elements exist
+  charityImage.addEventListener('mouseover', () => {
     charityDetails.style.display = 'block';
-});
+  });
 
-charityImage.addEventListener('mouseout', () => {
+  charityImage.addEventListener('mouseout', () => {
     charityDetails.style.display = 'none';
-});
+  });
+}
