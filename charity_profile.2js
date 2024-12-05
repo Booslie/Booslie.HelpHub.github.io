@@ -1,0 +1,28 @@
+<script src=""charity_profile.js"></script>
+  volunteerButton.addEventListener('click', () => {
+    // Code to display the form here
+});
+const form = document.createElement('form');
+const nameInput = document.createElement('input');
+const emailInput = document.createElement('input');
+const submitButton = document.createElement('button');
+
+// ... (set attributes for form elements)
+
+form.appendChild(nameInput);
+form.appendChild(emailInput);
+form.appendChild(submitButton);
+
+document.body.appendChild(form);
+const volunteerForm = document.getElementById('volunteer-form');
+volunteerForm.style.display = 'block';
+const charityImage = document.querySelector('.charity-image');
+const charityDetails = document.querySelector('.charity-details');
+
+charityImage.addEventListener('mouseover', () => {
+    charityDetails.style.display = 'block';
+});
+
+charityImage.addEventListener('mouseout', () => {
+    charityDetails.style.display = 'none';
+});
