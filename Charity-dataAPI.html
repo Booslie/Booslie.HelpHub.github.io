@@ -1,0 +1,41 @@
+const fetchData = async () => {
+  try {
+    const response = await fetch('YOUR_CHARITYAPI_ENDPOINT'); 
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json(); 
+    displayData(data); 
+  } catch (error) {
+    handleError(error);
+  }
+};
+
+// Example endpoint (replace with the actual endpoint from CharityAPI)
+// YOUR_CHARITYAPI_ENDPOINT = 'https://api.example.com/charity-data'; 
+
+const displayData = (data) => {
+  // Select the HTML element where you want to display the data
+  const dataContainer = document.getElementById('charityData'); 
+
+  // Clear any existing content
+  dataContainer.innerHTML = ''; 
+
+  // Example: Displaying a list of charities
+  const charityList = document.createElement('ul');
+  data.charities.forEach(charity => {
+    const listItem = document.createElement('li');
+    listItem.textContent = charity.name; 
+    charityList.appendChild(listItem);
+  });
+
+  dataContainer.appendChild(charityList);
+};
+
+const handleError = (error) => {
+  const errorContainer = document.getElementById('error');
+  errorContainer.textContent = `Error fetching data: ${error.message}`;
+};
+
+// Call the fetchData function to initiate the request
+fetchData();
